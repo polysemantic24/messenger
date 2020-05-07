@@ -8,19 +8,11 @@
   <div class="twelve wide column">
     <div class="ui fluid card chatbox">
       <div class="content">
-        <% @messages.each do |message| %>
-          <div class="ui small feed">
-            
-            <div class="event">
-              <div class="content">
+        
+        <div class="ui small feed">
+          <%= render @messages %>
+        </div>
 
-                <em>Christian Rocha</em>: <%= link_to message.body, root_path(message), class: "summary" %>
-
-              </div>
-            </div>
-            
-          </div>
-        <% end %>
       </div>
       <div class="extra content">
         <form class="ui reply form">
