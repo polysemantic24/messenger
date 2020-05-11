@@ -4,7 +4,6 @@
 </h2>
 
 <div class="ui placeholder segment">
-  <div class="ui two column very relaxed stackable grid">
     <div class="column">
       <%= form_with(scope: :session, url: login_path, class: "ui form") do |f| %>
         <div class="field">
@@ -24,14 +23,4 @@
         <%= f.submit "Login", class: "ui green submit button" %>
       <% end %>
     </div>
-    <div class="middle aligned column">
-      <div class="ui big button">
-        <i class="signup icon"></i>
-        Sign Up
-      </div>
-    </div>
-  </div>
-  <div class="ui vertical divider">
-    Or
-  </div>
 </div>
