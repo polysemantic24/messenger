@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("REDIS_URL") { "redis://redistogo:f07cfad6d9845656cb8a714895e339f3@pike.redistogo.com:10985/" } %>
   channel_prefix: messenger_production
