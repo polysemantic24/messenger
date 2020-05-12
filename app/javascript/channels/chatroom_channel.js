@@ -1,4 +1,6 @@
 import consumer from "./consumer"
+import submitMessage from "./../functions/submit-message"
+import scrollBottom from "./../functions/scroll-bottom"
 
 consumer.subscriptions.create("ChatroomChannel", {
   connected() {
@@ -10,8 +12,8 @@ consumer.subscriptions.create("ChatroomChannel", {
   },
 
   received(data) {
-    $('#message-container').prepend(data.mod_message);
-    submit_message();
-    scroll_bottom();
+    $('#message-container').append(data.mod_message);
+    submitMessage();
+    scrollBottom();
   }
 });
