@@ -6,7 +6,11 @@
     </a>
     <div class="right menu">
       <div class="ui dropdown item">
-        Account <i class="dropdown icon"></i>
+        <% if !logged_in? %>
+          <%= "Account" %><i class="dropdown icon"></i>
+        <% else %>
+          <%= current_user.username %><i class="dropdown icon"></i>
+        <% end %>
         <div class="menu">
           <% if logged_in? %>
             <%= link_to "Log out", logout_path, method: :delete, class: "item" %>
@@ -17,7 +21,7 @@
       </div>
       <% if !logged_in? %>
       <div class="item">
-          <%= link_to "Sign Up", signup_path, class: "ui green button" %>
+        <%= link_to "Sign Up", signup_path, class: "ui green button" %>
       </div>
       <% end %>
     </div>

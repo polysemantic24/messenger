@@ -35,14 +35,15 @@
 
         <div class="ui vertical menu">
           <a class="active item">
-            Home
+            Online
           </a>
-          <a class="item">
-            Messages
-          </a>
-          <a class="item">
-            Friends
-          </a>
+            <% User.all.each do |user| %>
+              <% if logged_in? && user == current_user %>
+                <a class="item">
+                  <%= user.username %>
+                </a>
+              <% end %>
+            <% end %>
         </div>
 
       </div>
